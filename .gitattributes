@@ -1,1 +1,7 @@
-* binary
+
+# Ensure line endings aren't changed for web files
+*.js binary
+*.dll binary
+*.wasm binary
+*.dat binary
+*.json binary
