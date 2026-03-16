@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "XWJyFSrG",
+  "version": "DLLuQdo9",
   "assets": [
     {
       "hash": "sha256-6Bi2oQLpLVVfIa4aHLb74d1FkZWL9fFElK4dfW9dQ6Y=",
@@ -14,8 +14,8 @@ self.assetsManifest = {
       "url": "_content/Microsoft.AspNetCore.Components.QuickGrid/QuickGrid.razor.js"
     },
     {
-      "hash": "sha256-kEkzO6Q/2LsCAihzlgOwdRWjZ1VHxcXnuPNM9LS+gYE=",
-      "url": "_framework/KalPassApp.kvi0q8fidx.wasm"
+      "hash": "sha256-sag+h8JqXyCWxGw0pE7qWreWhgfVbXA5hcbi2lf3l4w=",
+      "url": "_framework/KalPassApp.votsi4vsba.wasm"
     },
     {
       "hash": "sha256-gDr+Dk9wJGwwXRNxqopQ3T3mplhuvSUuHOhJOxCO+fk=",
@@ -166,8 +166,8 @@ self.assetsManifest = {
       "url": "_framework/System.ObjectModel.o2kurohviu.wasm"
     },
     {
-      "hash": "sha256-muy8ShCwLkuNavN7ZJ4XEwWoiM+5n6pFdA9Dm4xTunU=",
-      "url": "_framework/System.Private.CoreLib.eeuan9qqs2.wasm"
+      "hash": "sha256-53vxBHNKd9lmR0vgKw72wwCwkLbHNzfyoTSVEgQIZCs=",
+      "url": "_framework/System.Private.CoreLib.zpsef9g3ro.wasm"
     },
     {
       "hash": "sha256-SbhhjnN5u1bxSv0ZX1ZfSLYT222VCEzxylF9AKoW1Rs=",
@@ -206,16 +206,16 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.66stpp682q.js"
     },
     {
-      "hash": "sha256-/Jw/SO6be9yIzphiI8b7XME1Fk5hPXKd7+o/scdgC+g=",
-      "url": "_framework/dotnet.ko90y4cq3d.js"
-    },
-    {
       "hash": "sha256-WHdERxxgCQA79nOtWAOvxQ2f7p1kEx+swJwfE4AE9Nk=",
       "url": "_framework/dotnet.native.4xbsgn06op.js"
     },
     {
       "hash": "sha256-7GGgE/xC8VPxoauPHCELdkCxfHORbzK0Au3Y25vPeIY=",
       "url": "_framework/dotnet.native.gxid1jnzlg.wasm"
+    },
+    {
+      "hash": "sha256-XmNl6HtkuM6QAGw3l7lPbqUWRqghrAXJ70j4K9F9CVw=",
+      "url": "_framework/dotnet.qiomveouih.js"
     },
     {
       "hash": "sha256-YdXsn/a7hb+UMypOFCf8bmv3S6PbDPewiNWqmUM/1dk=",
@@ -250,11 +250,11 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-egiXAefp3zw+DSNNY3INuG5K1IUF572LMDA7MUr6AbE=",
+      "hash": "sha256-HpKGCQjTS1zM2GcNVkq0yqKehq7i7h35bN+fA7rAfYY=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-Whd2akiqyf0d+e4fSf41JuNUHxnfByNu2PucdOH6O5k=",
+      "hash": "sha256-vIXfqYrEipqNeapLV77Nzr7bUFnlUtestws6v4UD8/0=",
       "url": "js/crypto.js"
     },
     {
