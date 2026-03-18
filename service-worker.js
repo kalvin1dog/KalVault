@@ -29,9 +29,7 @@ async function onInstallOLD(event) {
 }
 async function onInstall(event) {
     console.info('Service worker: Install Started');
-    const cache = await caches.open(cacheName);
-    const baseUrl = new URL("/KalVault/", self.origin);
-
+   
     for (const asset of self.assetsManifest.assets) {
         const assetUrl = new URL(asset.url, baseUrl).href;
         try {
