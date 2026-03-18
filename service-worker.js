@@ -17,7 +17,7 @@ const base = "/KalVault/";
 const baseUrl = new URL(base, self.origin);
 const manifestUrlList = self.assetsManifest.assets.map(asset => new URL(asset.url, baseUrl).href);
 
-async function onInstall(event) {
+async function onInstallOLD(event) {
     console.info('Service worker: Install');
 
     // Fetch and cache all matching items from the assets manifest
@@ -27,6 +27,23 @@ async function onInstall(event) {
         .map(asset => new Request(asset.url, { cache: 'no-cache' }));
     await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
 }
+async function onInstall(event) {
+    console.info('Service worker: Install Started');
+    const cache = await caches.open(cacheName);
+    const baseUrl = new URL("/KalVault/", self.origin);
+
+    for (const asset of self.assetsManifest.assets) {
+        const assetUrl = new URL(asset.url, baseUrl).href;
+        try {
+            // We fetch each asset individually so one failure doesn't stop the rest
+            await cache.add(new Request(assetUrl, { cache: 'no-cache' }));
+        } catch (error) {
+            console.error('Failed to cache:', assetUrl, error);
+        }
+    }
+    console.info('Service worker: Install Complete');
+}
+
 
 async function onActivate(event) {
     console.info('Service worker: Activate');
