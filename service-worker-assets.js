@@ -2,7 +2,7 @@ self.assetsManifest = {
   "version": "DLLuQdo9",
   "assets": [
     {
-      "hash": "sha256-6Bi2oQLpLVVfIa4aHLb74d1FkZWL9fFElK4dfW9dQ6Y=",
+      "hash": "sha256-cnFKnyfzo8y6U5RPHdpkufQEasikCk/tqx5NmnHFdVA=",
       "url": "KalPassApp.styles.css"
     },
     {
