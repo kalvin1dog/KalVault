@@ -17,7 +17,7 @@ const base = "/KalVault/";
 const baseUrl = new URL(base, self.origin);
 const manifestUrlList = self.assetsManifest.assets.map(asset => new URL(asset.url, baseUrl).href);
 
-async function onInstall(event) {
+async function onInstallOLD(event) {
     console.info('Service worker: Install');
 
     // Fetch and cache all matching items from the assets manifest
@@ -38,6 +38,34 @@ for (const asset of assetsRequests) {
     
      console.info('Service worker: Install Complete');
 }
+
+async function onInstall(event) {
+    console.info('Service worker: Install');
+    const cache = await caches.open(cacheName);
+    
+    // Ensure this matches your <base href> EXACTLY
+    const base = "/KalVault/"; 
+    const baseUrl = new URL(base, self.origin);
+
+    const assetsToCache = self.assetsManifest.assets
+        .filter(asset => offlineAssetsInclude.some(pattern => pattern.test(asset.url)))
+        .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)));
+
+    // Fetch files one by one to isolate which one is failing
+    for (const asset of assetsToCache) {
+        const assetUrl = new URL(asset.url, baseUrl).href;
+        try {
+            // We use 'no-cache' to ensure we get the fresh version from GitHub
+            const response = await fetch(assetUrl, { cache: 'no-cache' });
+            if (!response.ok) throw new Error(`Status: ${response.status}`);
+            
+            await cache.put(assetUrl, response);
+        } catch (error) {
+            console.error(`Failed to cache: ${assetUrl}`, error);
+        }
+    }
+}
+
 
 async function onInstallNEW(event) {
     console.info('Service worker: Install');
