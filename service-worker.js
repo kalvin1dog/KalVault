@@ -43,20 +43,28 @@ async function onInstall(event) {
     console.info('Service worker: Install');
 
     const cache = await caches.open(cacheName);
+    
+try {
+    const response = await fetch(url, { cache: 'no-cache' });
+    if (!response.ok) throw new Error(response.status);
+    await cache.put(url, response.clone());
+} catch (err) {
+    console.warn("Skipping missing file:", url);
+}
+    
+   // for (const asset of self.assetsManifest.assets) {
+      //  if (!offlineAssetsInclude.some(pattern => pattern.test(asset.url))) continue;
+      //  if (offlineAssetsExclude.some(pattern => pattern.test(asset.url))) continue;
 
-    for (const asset of self.assetsManifest.assets) {
-        if (!offlineAssetsInclude.some(pattern => pattern.test(asset.url))) continue;
-        if (offlineAssetsExclude.some(pattern => pattern.test(asset.url))) continue;
+      //  const url = new URL(asset.url, baseUrl).href;
 
-        const url = new URL(asset.url, baseUrl).href;
-
-        try {
-            console.log("Caching:", url);
-            await cache.add(new Request(url, { cache: 'no-cache' }));
-        } catch (err) {
-            console.error("FAILED:", url, err);
-        }
-    }
+     //   try {
+          //  console.log("Caching:", url);
+         //   await cache.add(new Request(url, { cache: 'no-cache' }));
+       // } catch (err) {
+           // console.error("FAILED:", url, err);
+       // }
+    //}
 
     console.info('Service worker: Install Complete');
 }
