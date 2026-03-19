@@ -13,20 +13,63 @@ const offlineAssetsInclude = [ /\.dll$/, /\.pdb$/, /\.wasm/, /\.html/, /\.js$/, 
 const offlineAssetsExclude = [ /^service-worker\.js$/ ];
 
 // Replace with your base path if you are hosting on a subfolder. Ensure there is a trailing '/'.
-const base = "/";
+const base = "/KalVault/";
 const baseUrl = new URL(base, self.origin);
 const manifestUrlList = self.assetsManifest.assets.map(asset => new URL(asset.url, baseUrl).href);
 
-async function onInstall(event) {
+async function onInstallOLD(event) {
     console.info('Service worker: Install');
 
     // Fetch and cache all matching items from the assets manifest
     const assetsRequests = self.assetsManifest.assets
         .filter(asset => offlineAssetsInclude.some(pattern => pattern.test(asset.url)))
         .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)))
-        .map(asset => new Request(asset.url, { integrity: asset.hash, cache: 'no-cache' }));
+        //.map(asset => new Request(asset.url, { cache: 'no-cache' }));
+        .map(asset => new Request(new URL(asset.url, baseUrl).href, { cache: 'no-cache' }));
     await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
+    
+//for (const asset of assetsRequests) {
+//    try {
+    //    await cache.add(new Request(asset.url));
+  //  } catch (err) {
+   //     console.warn('Failed to cache:', asset.url);
+  //  }
+//}
+    
+     console.info('Service worker: Install Complete');
 }
+
+async function onInstall(event) {
+    console.info('Service worker: Install');
+
+    const cache = await caches.open(cacheName);
+    
+try {
+    const response = await fetch(url, { cache: 'no-cache' });
+    if (!response.ok) throw new Error(response.status);
+    await cache.put(url, response.clone());
+} catch (err) {
+    console.warn("Skipping missing file:", url);
+}
+    
+   // for (const asset of self.assetsManifest.assets) {
+      //  if (!offlineAssetsInclude.some(pattern => pattern.test(asset.url))) continue;
+      //  if (offlineAssetsExclude.some(pattern => pattern.test(asset.url))) continue;
+
+      //  const url = new URL(asset.url, baseUrl).href;
+
+     //   try {
+          //  console.log("Caching:", url);
+         //   await cache.add(new Request(url, { cache: 'no-cache' }));
+       // } catch (err) {
+           // console.error("FAILED:", url, err);
+       // }
+    //}
+
+    console.info('Service worker: Install Complete');
+}
+
+
 
 async function onActivate(event) {
     console.info('Service worker: Activate');
@@ -47,7 +90,8 @@ async function onFetch(event) {
         const shouldServeIndexHtml = event.request.mode === 'navigate'
             && !manifestUrlList.some(url => url === event.request.url);
 
-        const request = shouldServeIndexHtml ? 'index.html' : event.request;
+        //const request = shouldServeIndexHtml ? 'index.html' : event.request;
+        const request = shouldServeIndexHtml ? new Request(base + 'index.html') : event.request;
         const cache = await caches.open(cacheName);
         cachedResponse = await cache.match(request);
     }
