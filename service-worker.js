@@ -28,7 +28,7 @@ async function onInstall(event) {
     
     //await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
     
-for (const asset of assets) {
+for (const asset of assetsRequests) {
     try {
         await cache.add(new Request(asset.url));
     } catch (err) {
