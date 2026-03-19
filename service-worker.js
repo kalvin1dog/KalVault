@@ -26,15 +26,15 @@ async function onInstall(event) {
         .filter(asset => !offlineAssetsExclude.some(pattern => pattern.test(asset.url)))
         //.map(asset => new Request(asset.url, { cache: 'no-cache' }));
         .map(asset => new Request(new URL(asset.url, baseUrl).href, { cache: 'no-cache' }));
-    await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
+    //await caches.open(cacheName).then(cache => cache.addAll(assetsRequests));
     
-//for (const asset of assetsRequests) {
-//    try {
-    //    await cache.add(new Request(asset.url));
-  //  } catch (err) {
-   //     console.warn('Failed to cache:', asset.url);
-  //  }
-//}
+for (const asset of assetsRequests) {
+    try {
+        await cache.add(new Request(asset.url));
+    } catch (err) {
+        console.warn('Failed to cache:', asset.url);
+    }
+}
     
      console.info('Service worker: Install Complete');
 }
