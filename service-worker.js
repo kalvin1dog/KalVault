@@ -109,7 +109,7 @@ async function onActivate(event) {
         .map(key => caches.delete(key)));
 }
 
-async function onFetch(event) {
+async function onFetchOLD(event) {
     let cachedResponse = null;
     if (event.request.method === 'GET') {
         // For all navigation requests, try to serve index.html from cache,
@@ -126,3 +126,25 @@ async function onFetch(event) {
 
     return cachedResponse || fetch(event.request);
 }
+
+async function onFetch(event) {
+    let cachedResponse = null;
+    if (event.request.method === 'GET') {
+        const shouldServeIndexHtml = event.request.mode === 'navigate'
+            && !manifestUrlList.some(url => url === event.request.url);
+
+        const request = shouldServeIndexHtml ? 'index.html' : event.request;
+        const cache = await caches.open(cacheName);
+        cachedResponse = await cache.match(request);
+    }
+
+    // If it's in cache, return it. 
+    // If not, try to fetch it, but catch the error if Wi-Fi is off.
+    return cachedResponse || fetch(event.request).catch(() => {
+        // Optional: Return a custom "Offline" page or just let it fail gracefully
+        if (event.request.mode === 'navigate') {
+            return caches.match('index.html');
+        }
+    });
+}
+
