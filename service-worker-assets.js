@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "VhJjmC0c",
+  "version": "5edUi1sb",
   "assets": [
     {
       "hash": "sha256-6Bi2oQLpLVVfIa4aHLb74d1FkZWL9fFElK4dfW9dQ6Y=",
@@ -14,8 +14,8 @@ self.assetsManifest = {
       "url": "_content/Microsoft.AspNetCore.Components.QuickGrid/QuickGrid.razor.js"
     },
     {
-      "hash": "sha256-O5P1EY6rYUm73zko3QJkdUuSF1nr2l+e40W+MklZIRU=",
-      "url": "_framework/KalPassApp.9z5m5go77n.wasm"
+      "hash": "sha256-zkN4bB0ordC+T7HHVnQZ3pSzUQdk0BOvHViDW9vHr8g=",
+      "url": "_framework/KalPassApp.63kmx34zb0.wasm"
     },
     {
       "hash": "sha256-gDr+Dk9wJGwwXRNxqopQ3T3mplhuvSUuHOhJOxCO+fk=",
@@ -166,8 +166,8 @@ self.assetsManifest = {
       "url": "_framework/System.ObjectModel.tgdmj4qkac.wasm"
     },
     {
-      "hash": "sha256-AsLy7vdF1m1FiuoSnZylRFJdBkiyvR4soIwvSRPt/TA=",
-      "url": "_framework/System.Private.CoreLib.m77ydbf57m.wasm"
+      "hash": "sha256-5qeGnv4hubWG/pW/ximylEK5mcob2v193Ja180WzDwc=",
+      "url": "_framework/System.Private.CoreLib.y6aupg1fg1.wasm"
     },
     {
       "hash": "sha256-V88Ajtbmi6zNArBt44xOpaB91f1f4RvFqyiUX77mkHI=",
@@ -206,8 +206,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.66stpp682q.js"
     },
     {
-      "hash": "sha256-qJKecjv5TBG+qluQ9Zq3F7eQkzAiiOUo8bcRG1Qnap0=",
-      "url": "_framework/dotnet.cjq89ja3xq.js"
+      "hash": "sha256-4TiryH9yTygxVSce0+enK0AzJBBaluefxL1BBzMtr+M=",
+      "url": "_framework/dotnet.hcmnk13owj.js"
     },
     {
       "hash": "sha256-Ebk+Km0uqtdo/srKe0YcuUOlFykCcKVkBt03gTWt0aU=",
@@ -250,16 +250,12 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-RC2NRYLHSxN+kKanNFInOESjSUR7GzKdSmn6LF7DPSg=",
+      "hash": "sha256-R3lPDwsZgmEAtPP7L49/hLcQNJYBxCJW0MV2Jyc+Lw4=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-ez2beKea3oKsB2axq98WH8TUc6fKVWDUIK0RruUeRt8=",
+      "hash": "sha256-unnX452VIKB6zZBVoR+s1SzmbLtGopvT3kGpqJB5Y5c=",
       "url": "js/crypto.js"
-    },
-    {
-      "hash": "sha256-okQMv1xiOzEtk1HL/UYmoKPil6+YaTRQYzowC+bIYAY=",
-      "url": "js/crypto.published.js"
     },
     {
       "hash": "sha256-Yy5/hBqRmmU2MJ1TKwP2aXoTO6+OjzrLmJIsC2Wy4H8=",
