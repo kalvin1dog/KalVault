@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "sXtwO5Ps",
+  "version": "ihMl7MxT",
   "assets": [
     {
       "hash": "sha256-6Bi2oQLpLVVfIa4aHLb74d1FkZWL9fFElK4dfW9dQ6Y=",
@@ -14,8 +14,8 @@ self.assetsManifest = {
       "url": "_content/Microsoft.AspNetCore.Components.QuickGrid/QuickGrid.razor.js"
     },
     {
-      "hash": "sha256-lKJ6MXL8dTZr/t7OJ6t0vAHwGzUupLoU12lE9LpSWtU=",
-      "url": "_framework/KalPassApp.ofum37gkh1.wasm"
+      "hash": "sha256-xUmJBXyOAKKKRM4yEX+UQ/DRQafXrvRT8EIZmTDIOZ8=",
+      "url": "_framework/KalPassApp.7lw1ro8qj5.wasm"
     },
     {
       "hash": "sha256-zMlOsBH3Ko8IBjlhABd+Jr2c/7JCSCy9k+K0BpToCNs=",
@@ -226,8 +226,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.66stpp682q.js"
     },
     {
-      "hash": "sha256-4Pksx5qQf+YzSde3tRzDR4+G7XEU5AwHll2ZY6xQnlE=",
-      "url": "_framework/dotnet.c1vfjfautn.js"
+      "hash": "sha256-5CDGlyEl+TZ6gBj3IOfvLt6DRe5SNQSMxbT35hhNc6c=",
+      "url": "_framework/dotnet.c21inhzbfz.js"
     },
     {
       "hash": "sha256-hYigRhIZKHyCXxXWqL/yR3ZWzZhV2oSi+2N3/UPeoxk=",
@@ -270,7 +270,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-yFKBsC1ccHCZjPhYJhNNG2FdPkie9UcK/rQSvgUqR5I=",
+      "hash": "sha256-fJMW3ffnnbV8oNK3WJIrot77qEqS7J6CGTeKjiJkv/E=",
       "url": "index.html"
     },
     {
@@ -288,6 +288,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-mMzxeqEMILsTAXYmGPzJtqs6Tn8mtgcdZNC0EVTfOHU=",
       "url": "js/jspdf.umd.min.js"
+    },
+    {
+      "hash": "sha256-El/8h7Mf+w89DDiLsOzyQE9SJVZICUKOEnCbQA/697I=",
+      "url": "js/pdfExport.js"
     },
     {
       "hash": "sha256-Yy5/hBqRmmU2MJ1TKwP2aXoTO6+OjzrLmJIsC2Wy4H8=",
